@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nikah Forever</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <button id="scroll-arrow" type="button">
+        <img src="scroll-solid.svg" alt="Scroll Arrow Icon" />
+        <span>Scroll Down</span>
+      </button>
+      <video id="background-video" autoplay loop muted>
+        <source src="background video.mp4" type="video/mp4" />
+      </video>
+    </div>
+
+    <section id="features">
+      <h2>Features of Nikah Forever</h2>
+      <div class="feature">
+        <img src="headset-solid.svg" alt="Audio Chat Icon" />
+        <p>
+          Audio Chat: Enable users to communicate through audio chat, providing
+          a convenient way to connect with potential partners.
+        </p>
+      </div>
+      <div class="feature">
+        <img src="comments-dollar-solid.svg" alt="Unlimited Messaging Icon" />
+        <p>
+          Unlimited Messaging: Offer unlimited messaging capabilities to users,
+          allowing them to freely exchange messages with each other.
+        </p>
+      </div>
+      <div class="feature">
+        <img src="video-solid.svg" alt="Video Chat Icon" />
+        <p>
+          Video Chat: Provide a video chat feature that enables users to have
+          face-to-face conversations and get to know each other better.
+        </p>
+      </div>
+    </section>
+
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        const videoContainer = document.getElementById("video-container");
+        const featuresSection = document.getElementById("features");
+
+        // Smooth scroll to features section when scrolling down
+        window.addEventListener("scroll", () => {
+          const scrollPosition = window.scrollY;
+
+          if (scrollPosition >= videoContainer.offsetHeight) {
+            featuresSection.classList.add("show");
+          } else {
+            featuresSection.classList.remove("show");
+          }
+        });
+
+        // Smooth scroll to features section when clicking the scroll arrow button
+        const scrollArrowButton = document.getElementById("scroll-arrow");
+        scrollArrowButton.addEventListener("click", () => {
+          featuresSection.scrollIntoView({ behavior: "smooth" });
+        });
+      });
+    </script>
+  </body>
+</html>
